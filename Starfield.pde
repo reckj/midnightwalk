@@ -1,5 +1,5 @@
 class Starfield {
-  int starlayer = 1;
+  //int starlayer = 1;
   int fieldsize = 120;
   int starSizeToleranceTop = 5;
   int starSizeToleranceBottom = 1;
