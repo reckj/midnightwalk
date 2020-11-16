@@ -1,6 +1,7 @@
 Player player;
 Obstacle obstacle1;
 Path path;
+Starfield starfield1;
 
 color set1 = #F2505D;
 color set2 = #7A77D9;
@@ -12,12 +13,15 @@ color bgColor = set3;
 String activeState = "Game";
 
 float pathTolerance = 50;
+float pathMovementScale = 1.5;
+float pathVelocity = 0.2;
+float pathPhase = radians(90);
 
 
 
 void setup() {
-  //size(1000, 1000, FX2D);
-  fullScreen(FX2D);
+  size(1500, 1000, FX2D);
+  //fullScreen(FX2D, 2);
 
   player = new Player();
   
@@ -25,6 +29,8 @@ void setup() {
   obstacle1.resetPosition();
   
   path = new Path();
+  
+  starfield1 = new Starfield();
 }
 
 
@@ -35,9 +41,13 @@ void draw() {
   }
   if (activeState.equals("Game")) {
     background(bgColor);
+    starfield1.display();
     obstacle1.display();
     obstacle1.update();
     path.display();
+    path.update();
+    stroke(255);
+    line(width/2,0,width/2,height);
   }
   if (activeState.equals("Pause")) {
     runPauseState();
