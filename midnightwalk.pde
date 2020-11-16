@@ -10,6 +10,8 @@ color bgColor = set3;
 
 String activeState = "Game";
 
+float pathTolerance = 50;
+
 
 
 void setup() {
@@ -31,6 +33,7 @@ void draw() {
   if (activeState.equals("Game")) {
     background(bgColor);
     obstacle1.display();
+    obstacle1.update();
   }
   if (activeState.equals("Pause")) {
     runPauseState();

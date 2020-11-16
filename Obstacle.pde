@@ -2,7 +2,7 @@ class Obstacle {
   // visual attributes
   float size = 100;
 
-  PVector velocity = new PVector(-3, 0);
+  PVector velocity = new PVector(0, 3);
   PVector pos = new PVector(0, 0);
  
   void update() {
