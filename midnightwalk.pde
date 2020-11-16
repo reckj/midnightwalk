@@ -31,6 +31,7 @@ void setup() {
   path = new Path();
   
   starfield1 = new Starfield();
+  starfield1.generatePattern();
 }
 
 
@@ -41,6 +42,7 @@ void draw() {
   }
   if (activeState.equals("Game")) {
     background(bgColor);
+    starfield1.update();
     starfield1.display();
     obstacle1.display();
     obstacle1.update();
