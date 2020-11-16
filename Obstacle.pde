@@ -16,7 +16,7 @@ class Obstacle {
   }
 
   void resetPosition() {
-    pos.set(random(width/7, width/3), 0);
+    pos.set(random(width/5, 4*width/5), 0);
   }
 
   void display() {

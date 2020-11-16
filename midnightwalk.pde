@@ -1,5 +1,6 @@
 Player player;
 Obstacle obstacle1;
+Path path;
 
 color set1 = #F2505D;
 color set2 = #7A77D9;
@@ -22,6 +23,8 @@ void setup() {
   
   obstacle1 = new Obstacle();
   obstacle1.resetPosition();
+  
+  path = new Path();
 }
 
 
@@ -34,6 +37,7 @@ void draw() {
     background(bgColor);
     obstacle1.display();
     obstacle1.update();
+    path.display();
   }
   if (activeState.equals("Pause")) {
     runPauseState();
