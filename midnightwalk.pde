@@ -32,9 +32,15 @@ void setup() {
   path = new Path();
   
   starfield1 = new Starfield();
+  starfield1.fieldsize = 120;
   starfield1.generatePattern();
+  starfield1.velocity = 0.2;
   starfield2 = new Starfield();
+  starfield2.fieldsize = 40;
+  starfield2.starSizeToleranceTop = 10;
+  starfield2.starSizeToleranceBottom = 5;
   starfield2.generatePattern();
+  starfield2.velocity = 0.75;
 }
 
 
@@ -47,6 +53,8 @@ void draw() {
     background(bgColor);
     starfield1.update();
     starfield1.display();
+    starfield2.update();
+    starfield2.display();
     obstacle1.display();
     obstacle1.update();
     path.display();
