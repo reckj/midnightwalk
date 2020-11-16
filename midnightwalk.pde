@@ -2,6 +2,7 @@ Player player;
 Obstacle obstacle1;
 Path path;
 Starfield starfield1;
+Starfield starfield2;
 
 color set1 = #F2505D;
 color set2 = #7A77D9;
@@ -32,6 +33,8 @@ void setup() {
   
   starfield1 = new Starfield();
   starfield1.generatePattern();
+  starfield2 = new Starfield();
+  starfield2.generatePattern();
 }
 
 
