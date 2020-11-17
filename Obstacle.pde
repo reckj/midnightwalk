@@ -9,7 +9,7 @@ class Obstacle {
     pos.add(velocity);
 
     // add wall again if it is out of screen
-    if ((pos.x + size) < 0)
+    if ((pos.y) > height)
     {
       resetPosition();
     }

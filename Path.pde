@@ -12,6 +12,7 @@ class Path {
   void display() {
     noStroke();
     fill(set4);
-    rect(pos.x,pos.y,pathWidth, height);
+    rect(pos.x, pos.y, pathWidth, height);
+    line(pos.x + pathWidth/2, player.pos.y, player.pos.x, player.pos.y);
   }
 }

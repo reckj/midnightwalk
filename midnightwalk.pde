@@ -17,6 +17,8 @@ color bgColor = set3;
 
 String activeState = "Menu";
 
+float playbackGain = 0.0;
+
 int maxStarfieldSize = 300;
 
 boolean pauseWasPressed = false;
@@ -35,7 +37,7 @@ void setup() {
   //fullScreen(FX2D, 2);
   
   file = new SoundFile(this, "soundtrack.wav");
-  file.loop();
+  //file.loop();
 
   player = new Player();
   
@@ -122,12 +124,14 @@ void keyPressed() {
     }
     if (key == 'p' || key == 'P'){
       activeState = "Pause";
+      file.pause();
     }
   }
 
   if (activeState.equals("Menu")) {
     if (key == 'g' || key == 'G') {
       activeState = "Game";
+      file.loop(1,playbackGain);
     }
 
     if (key == 'q' || key == 'Q') {
@@ -138,6 +142,7 @@ void keyPressed() {
     if ((key == 'p' & pauseWasPressed == true)|| (key == 'P' & pauseWasPressed == true)){
       activeState = "Game";
       pauseWasPressed = false;
+      file.play();
     }
   }
 }
