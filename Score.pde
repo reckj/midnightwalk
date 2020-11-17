@@ -9,7 +9,7 @@ class Score {
       if(checkCircle(path.pos.x, path.pos.y, path.pathWidth/2, player.pos.x, player.pos.y, player.size/2)){
         value+= 0.1;
       }
-      else if(checkCircle(path.pos.x, path.pos.y, path.pathWidth/2, player.pos.x, player.pos.y, player.size/2) == false){
+      else if(checkCircle(path.pos.x, path.pos.y, (path.pathWidth + pathTolerance)/2, player.pos.x, player.pos.y, player.size/2) == false){
         value-= 0.1;
       }
     }
