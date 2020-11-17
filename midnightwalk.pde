@@ -19,7 +19,7 @@ color bgColor = set3;
 
 String activeState = "Menu";
 
-float playbackGain = 0.0;
+float playbackGain = 0.5;
 
 int maxStarfieldSize = 300;
 

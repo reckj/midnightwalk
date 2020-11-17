@@ -9,14 +9,16 @@ class Player {
 
   void reset() {
     velocity = new PVector(0, 0);
-    pos = new PVector(width / 5, height / 2);
+    pos = new PVector(width / 2, height / 2);
   }
 
   void update() {
-    pos.add(velocity);
-
-    if (pos.y >= height) {
+    if (pos.x < 0 || pos.x > width){
       activeState = "Menu";
+      reset();
+    }
+    else {
+      pos.add(velocity);
     }
   }
   
