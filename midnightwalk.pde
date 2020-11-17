@@ -17,6 +17,8 @@ color set4 = #0B3640;
 color set5 = #F2C744;
 color bgColor = set3;
 
+float menuRectSizeX = 500;
+
 String activeState = "Menu";
 
 float playbackGain = 0.5;
@@ -104,7 +106,8 @@ void runMenuState(){
   file.stop();
   background(set1);
   fill(set3);
-  //rect(width/3,height/2,200,200);
+  rectMode(CENTER);
+  //rect(width/4,height/5,menuRectSizeX,menuRectSizeX);
   textAlign(CENTER, CENTER);
   textSize(120);
   text("Midnightwalk", width/2, height/5);
@@ -135,7 +138,7 @@ void keyPressed() {
     }
     if (key == 'p' || key == 'P'){
       activeState = "Pause";
-      file.pause();
+      //file.pause();
     }
   }
 
@@ -153,7 +156,7 @@ void keyPressed() {
     if ((key == 'p' & pauseWasPressed == true)|| (key == 'P' & pauseWasPressed == true)){
       activeState = "Game";
       pauseWasPressed = false;
-      file.play();
+      //file.play();
     }
   }
 }
