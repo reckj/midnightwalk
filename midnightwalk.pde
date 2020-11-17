@@ -16,7 +16,7 @@ color set3 = #020E26;
 color set4 = #0B3640;
 color set5 = #F2C744;
 color bgColor = set3;
-color set4Faded = 0x800B3640;
+color set4Faded = 0x330B3640;
 color set4Fadedless = 0xB30B3640;
 
 float menuRectSizeX = 500;
@@ -29,9 +29,9 @@ int maxStarfieldSize = 300;
 
 boolean pauseWasPressed = false;
 
-float playerAcceleration = 1.0;
+float playerAcceleration = 2.0;
 
-float pathTolerance = 50;
+float pathTolerance = 150;
 float pathMovementScale = 1.5;
 float pathVelocity = 0.2;
 float pathPhase = radians(90);
