@@ -11,7 +11,7 @@ color set4 = #0B3640;
 color set5 = #F2C744;
 color bgColor = set3;
 
-String activeState = "Game";
+String activeState = "Menu";
 
 int maxStarfieldSize = 300;
 
@@ -85,7 +85,11 @@ void runQuitState() {
 }
 
 void runMenuState(){
-  background(0);
+  background(set1);
+  fill(set3);
+  textAlign(CENTER, CENTER);
+  textSize(20);
+  text("PRESS G FOR GAME, Q FOR QUIT.", width / 2, height / 2);
 }
 
 void runPauseState() {
@@ -114,6 +118,7 @@ void keyPressed() {
 
   if (activeState.equals("Menu")) {
     if (key == 'g' || key == 'G') {
+      activeState = "Game";
     }
 
     if (key == 'q' || key == 'Q') {
