@@ -101,6 +101,7 @@ void runQuitState() {
 }
 
 void runMenuState(){
+  file.stop();
   background(set1);
   fill(set3);
   //rect(width/3,height/2,200,200);
