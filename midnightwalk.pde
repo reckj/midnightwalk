@@ -11,6 +11,7 @@ Path path;
 Starfield starfield1;
 Starfield starfield2;
 Score score;
+TitleWalker titlewalker;
 
 float time = 0;
 
@@ -73,6 +74,8 @@ void setup() {
   starfield2.velocity = 0.75;
   
   score = new Score();
+  
+  //titlewalker = new TitleWalker();
 }
 
 
@@ -132,6 +135,11 @@ void keyPressed() {
       activeState = "Game";
       pauseWasPressed = false;
       //file.play();
+    }
+  }
+  if (activeState.equals("GameOver")) {
+    if (key == 'm' || key == 'M') {
+      activeState = "Menu";
     }
   }
 }

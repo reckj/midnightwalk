@@ -40,6 +40,8 @@ void runMenuState(){
   score.resetScore();
   obstacle1.resetPosition();
   obstacle2.resetPosition();
+  //titlewalker.update();
+  //titlewalker.display();
 }
 
 void runPauseState() {
@@ -54,6 +56,8 @@ void runGameOverState(){
   background(set5);
   fill(set3);
   textAlign(CENTER, CENTER);
+  textSize(120);
+  text("GAME OVER", width/2, height/5);
   textSize(40);
   text("PRESS M FOR MENU", width / 2, height / 2);
 }
