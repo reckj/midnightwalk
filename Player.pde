@@ -3,7 +3,7 @@ class Player {
   float size = 40;
 
   // physical attributes
-  final float speedLimit = 5;
+  final float speedLimit = 10;
   PVector velocity = new PVector(0, 0);
   PVector pos = new PVector(width / 5, height / 2);
 

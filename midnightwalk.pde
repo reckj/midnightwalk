@@ -123,11 +123,13 @@ void keyPressed() {
   // game inputs
   if (activeState.equals("Game")) {
     if (key == CODED){
-      if (keyCode == LEFT) {
-        player.velocity.add(-playerAcceleration,0);
-      }
-      if (keyCode == RIGHT) {
-        player.velocity.add(playerAcceleration,0);
+      if (player.velocity.mag() <= player.speedLimit){
+        if (keyCode == LEFT) {
+          player.velocity.add(-playerAcceleration,0);
+        }
+        if (keyCode == RIGHT) {
+          player.velocity.add(playerAcceleration,0);
+        }
       }
     }
     if (key == 'p' || key == 'P'){
