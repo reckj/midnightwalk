@@ -32,7 +32,7 @@ class Player {
   }
   
   void checkCollisionWithObstacle(Obstacle obstacle){
-    if (checkRectangle(pos.x - size/2, pos.y - size/2, size, size, obstacle.pos.x, obstacle.pos.y, obstacle.size, obstacle.size)){
+    if (checkRectangle(pos.x - size/2, pos.y - size/2, size, size, obstacle.pos.x, obstacle.pos.y, obstacle.obstacleWidth, obstacle.obstacleHeight)){
       activeState = "Menu";
     }
   }

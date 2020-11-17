@@ -133,6 +133,8 @@ void runMenuState(){
   player.resetPlayer();
   path.resetPath();
   score.resetScore();
+  obstacle1.resetPosition();
+  obstacle2.resetPosition();
 }
 
 void runPauseState() {

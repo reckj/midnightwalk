@@ -1,6 +1,7 @@
 class Obstacle {
   // visual attributes
-  float size = 100;
+  float obstacleHeight = 100;
+  float obstacleWidth = 200;
 
   PVector velocity = new PVector(0, 3);
   PVector pos = new PVector(0, 0);
@@ -16,12 +17,15 @@ class Obstacle {
   }
 
   void resetPosition() {
-    pos.set(random(width/5, 4*width/5), 0);
+    pos.set(random(width/10, 9*width/10), random(-100,0));
+    velocity.set(0, random(0.5, 5));
+    obstacleHeight = random(50, 250);
+    obstacleWidth = random(100, 350);
   }
 
   void display() {
     noStroke();
     fill(set1);
-    rect(pos.x, pos.y, size, size);
+    rect(pos.x, pos.y, obstacleWidth, obstacleHeight);
   }
 }
