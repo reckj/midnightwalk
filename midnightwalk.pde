@@ -2,6 +2,8 @@ import processing.sound.*;
 
 SoundFile file;
 
+PFont cyRegular;
+
 Player player;
 Obstacle obstacle1;
 Path path;
@@ -38,6 +40,9 @@ void setup() {
   
   file = new SoundFile(this, "soundtrack.wav");
   //file.loop();
+
+  cyRegular = createFont("CyRegular.otf",32);
+  textFont(cyRegular);
 
   player = new Player();
   
@@ -98,8 +103,11 @@ void runQuitState() {
 void runMenuState(){
   background(set1);
   fill(set3);
+  //rect(width/3,height/2,200,200);
   textAlign(CENTER, CENTER);
-  textSize(20);
+  textSize(120);
+  text("Midnightwalk", width/2, height/5);
+  textSize(32);
   text("PRESS G FOR GAME, Q FOR QUIT.", width / 2, height / 2);
 }
 
@@ -107,7 +115,7 @@ void runPauseState() {
   background(set2);
   fill(255);
   textAlign(CENTER, CENTER);
-  textSize(20);
+  textSize(40);
   text("PRESS P TO UNPAUSE", width / 2, height / 2);
 }
 
