@@ -13,6 +13,8 @@ color bgColor = set3;
 
 String activeState = "Game";
 
+boolean pauseWasPressed = false;
+
 float pathTolerance = 50;
 float pathMovementScale = 1.5;
 float pathVelocity = 0.2;
@@ -47,9 +49,20 @@ void setup() {
 
 void draw() {
   if (activeState.equals("Menu")) {
-
+    runMenuState();
   }
   if (activeState.equals("Game")) {
+    runGameState();
+  }
+  if (activeState.equals("Pause")) {
+    runPauseState();
+  }
+  if (activeState.equals("Quit")) {
+    runQuitState();
+  }
+}
+
+void runGameState() {
     background(bgColor);
     starfield1.update();
     starfield1.display();
@@ -61,21 +74,22 @@ void draw() {
     path.update();
     stroke(255);
     line(width/2,0,width/2,height);
-  }
-  if (activeState.equals("Pause")) {
-    runPauseState();
-  }
-  if (activeState.equals("Quit")) {
-    runQuitState();
-  }
 }
 
 void runQuitState() {
   exit();
 }
 
+void runMenuState(){
+  background(0);
+}
+
 void runPauseState() {
   background(set2);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(20);
+  text("PRESS P TO UNPAUSE", width / 2, height / 2);
 }
 
 void keyPressed() {
@@ -85,9 +99,6 @@ void keyPressed() {
       if (keyCode == LEFT || keyCode == RIGHT) {
         obstacle1.resetPosition();
       }
-    }
-    if (key == 'm' || key == 'M'){
-      activeState = "Menu";
     }
     if (key == 'p' || key == 'P'){
       activeState = "Pause";
@@ -100,6 +111,20 @@ void keyPressed() {
 
     if (key == 'q' || key == 'Q') {
       activeState = "Quit";
+    }
+  }
+  if (activeState.equals("Pause")) {
+    if ((key == 'p' & pauseWasPressed == true)|| (key == 'P' & pauseWasPressed == true)){
+      activeState = "Game";
+      pauseWasPressed = false;
+    }
+  }
+}
+
+void keyReleased() {
+  if (activeState.equals("Pause")) {
+    if (key == 'p' || key == 'P'){
+      pauseWasPressed = true;
     }
   }
 }
