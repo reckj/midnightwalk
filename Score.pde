@@ -3,7 +3,7 @@ class Score {
   
   void update(){
     if(value < 0){
-      activeState = "Menu";
+      activeState = "GameOver";
     }
     else{
       if(checkCircle(path.pos.x, path.pos.y, path.pathWidth/2, player.pos.x, player.pos.y, player.size/2)){

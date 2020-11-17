@@ -44,8 +44,16 @@ void runMenuState(){
 
 void runPauseState() {
   background(set2);
-  fill(255);
+  fill(set3);
   textAlign(CENTER, CENTER);
   textSize(40);
   text("PRESS P TO UNPAUSE", width / 2, height / 2);
+}
+
+void runGameOverState(){
+  background(set5);
+  fill(set3);
+  textAlign(CENTER, CENTER);
+  textSize(40);
+  text("PRESS M FOR MENU", width / 2, height / 2);
 }

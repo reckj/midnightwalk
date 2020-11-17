@@ -90,6 +90,9 @@ void draw() {
   if (activeState.equals("Quit")) {
     runQuitState();
   }
+  if (activeState.equals("GameOver")) {
+    runGameOverState();
+  }
   time++;
 }
 
