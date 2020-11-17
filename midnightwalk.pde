@@ -6,9 +6,11 @@ PFont cyRegular;
 
 Player player;
 Obstacle obstacle1;
+Obstacle obstacle2;
 Path path;
 Starfield starfield1;
 Starfield starfield2;
+Score score;
 
 color set1 = #F2505D;
 color set2 = #7A77D9;
@@ -52,6 +54,8 @@ void setup() {
   
   obstacle1 = new Obstacle();
   obstacle1.resetPosition();
+  obstacle2 = new Obstacle();
+  obstacle2.resetPosition();
   
   path = new Path();
   
@@ -65,6 +69,8 @@ void setup() {
   starfield2.starSizeToleranceBottom = 5;
   starfield2.generatePattern();
   starfield2.velocity = 0.75;
+  
+  score = new Score();
 }
 
 
@@ -94,6 +100,10 @@ void runGameState() {
     path.update();
     obstacle1.display();
     obstacle1.update();
+    obstacle2.display();
+    obstacle2.update();
+    score.update();
+    score.dislay();
     player.update();
     player.display();
     stroke(255);

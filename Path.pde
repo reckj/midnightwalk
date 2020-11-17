@@ -8,7 +8,7 @@ class Path {
   }
   
   void display() {
-    if(abs(player.pos.x - pos.x) < pathWidth/2){
+    if(checkCircle(pos.x, pos.y, pathWidth/2, player.pos.x, player.pos.y, player.size/2)){
       fill(set1);
       circle(pos.x, pos.y, pathWidth);
       fill(set4Faded);
