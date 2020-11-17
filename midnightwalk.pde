@@ -109,6 +109,8 @@ void runGameState() {
     score.dislay();
     player.update();
     player.display();
+    player.checkCollisionWithObstacle(obstacle1);
+    player.checkCollisionWithObstacle(obstacle2);
     stroke(255);
     line(width/2,0,width/2,height);
 }

@@ -23,9 +23,18 @@ class Player {
   }
   
   void display() {
-    noStroke();
+    //noStroke();
+    stroke(255);
     fill(set2);
+    rectMode(CORNER);
+    rect(pos.x - size/2, pos.y - size/2, size, size);    
     circle(pos.x,pos.y,size);
+  }
+  
+  void checkCollisionWithObstacle(Obstacle obstacle){
+    if (checkRectangle(pos.x - size/2, pos.y - size/2, size, size, obstacle.pos.x, obstacle.pos.y, obstacle.size, obstacle.size)){
+      activeState = "Menu";
+    }
   }
 
 }
