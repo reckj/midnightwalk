@@ -1,6 +1,6 @@
 class Starfield {
   //int starlayer = 1;
-  int fieldsize = 120;
+  int fieldsize = maxStarfieldSize;
   int starSizeToleranceTop = 5;
   int starSizeToleranceBottom = 1;
   float posRelative = 0;
@@ -33,8 +33,8 @@ class Starfield {
   
   void generatePattern(){
     for (int i=0; i < fieldsize; i++){
-      posX[i] = random(0, width);
-      posY[i] = random(0, height);
+      posX[i] = random(-width, width);
+      posY[i] = random(-height, height);
       size[i] = random(starSizeToleranceBottom, starSizeToleranceTop);
     }    
   }

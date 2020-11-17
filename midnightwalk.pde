@@ -13,6 +13,8 @@ color bgColor = set3;
 
 String activeState = "Game";
 
+int maxStarfieldSize = 300;
+
 boolean pauseWasPressed = false;
 
 float pathTolerance = 50;
@@ -34,11 +36,11 @@ void setup() {
   path = new Path();
   
   starfield1 = new Starfield();
-  starfield1.fieldsize = 120;
+  starfield1.fieldsize = 150;
   starfield1.generatePattern();
   starfield1.velocity = 0.2;
   starfield2 = new Starfield();
-  starfield2.fieldsize = 40;
+  starfield2.fieldsize = 60;
   starfield2.starSizeToleranceTop = 10;
   starfield2.starSizeToleranceBottom = 5;
   starfield2.generatePattern();
@@ -68,10 +70,12 @@ void runGameState() {
     starfield1.display();
     starfield2.update();
     starfield2.display();
-    obstacle1.display();
-    obstacle1.update();
     path.display();
     path.update();
+    obstacle1.display();
+    obstacle1.update();
+    player.update();
+    player.display();
     stroke(255);
     line(width/2,0,width/2,height);
 }
@@ -96,8 +100,11 @@ void keyPressed() {
   // game inputs
   if (activeState.equals("Game")) {
     if (key == CODED){
-      if (keyCode == LEFT || keyCode == RIGHT) {
-        obstacle1.resetPosition();
+      if (keyCode == LEFT) {
+        player.velocity.add(-1,0);
+      }
+      if (keyCode == RIGHT) {
+        player.velocity.add(1,0);
       }
     }
     if (key == 'p' || key == 'P'){
@@ -127,4 +134,11 @@ void keyReleased() {
       pauseWasPressed = true;
     }
   }
+  if (activeState.equals("Game")){
+    if (key == CODED){
+        if (keyCode == LEFT || keyCode == RIGHT) {
+          player.velocity.set(0,0);
+        }
+      }
+    }
 }

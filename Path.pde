@@ -11,7 +11,7 @@ class Path {
   
   void display() {
     noStroke();
-    fill(set2);
+    fill(set4);
     rect(pos.x,pos.y,pathWidth, height);
   }
 }

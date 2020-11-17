@@ -19,5 +19,11 @@ class Player {
       activeState = "Menu";
     }
   }
+  
+  void display() {
+    noStroke();
+    fill(set2);
+    circle(pos.x,pos.y,size);
+  }
 
 }
