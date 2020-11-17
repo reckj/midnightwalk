@@ -11,7 +11,7 @@ class Path {
   
   void display() {
     noStroke();
-    fill(set4);
+    fill(set4Fadedless);
     circle(pos.x, pos.y, pathWidth);
     fill(set4Faded);
     circle(pos.x, pos.y, pathWidth + pathTolerance);
