@@ -5,9 +5,9 @@ class Player {
   // physical attributes
   final float speedLimit = 10;
   PVector velocity = new PVector(0, 0);
-  PVector pos = new PVector(width / 5, height / 2);
+  PVector pos = new PVector(width / 2, height / 2);
 
-  void reset() {
+  void resetPlayer() {
     velocity = new PVector(0, 0);
     pos = new PVector(width / 2, height / 2);
   }
@@ -15,7 +15,7 @@ class Player {
   void update() {
     if (pos.x < 0 || pos.x > width){
       activeState = "Menu";
-      reset();
+      resetPlayer();
     }
     else {
       pos.add(velocity);

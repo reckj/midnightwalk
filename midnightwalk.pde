@@ -12,6 +12,8 @@ Starfield starfield1;
 Starfield starfield2;
 Score score;
 
+float time = 0;
+
 color set1 = #F2505D;
 color set2 = #7A77D9;
 color set3 = #020E26;
@@ -88,6 +90,7 @@ void draw() {
   if (activeState.equals("Quit")) {
     runQuitState();
   }
+  time++;
 }
 
 void runGameState() {
@@ -125,6 +128,9 @@ void runMenuState(){
   text("Midnightwalk", width/2, height/5);
   textSize(32);
   text("PRESS G FOR GAME, Q FOR QUIT.", width / 2, height / 2);
+  player.resetPlayer();
+  path.resetPath();
+  score.resetScore();
 }
 
 void runPauseState() {

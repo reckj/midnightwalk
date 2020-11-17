@@ -3,6 +3,12 @@ class Path {
   
   PVector pos = new PVector(width/2, height/2);
   
+  void resetPath(){
+    pos.x = width/2;
+    pos.y = height/2;
+    time = 0;
+  }
+  
   void update() {
     pos.add(sinMovement(pathMovementScale, pathVelocity, pathPhase),0);
   }
