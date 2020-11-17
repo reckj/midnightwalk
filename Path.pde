@@ -2,7 +2,7 @@ class Path {
   float pathWidth = 100;
   
   //PVector velocity = new PVector(0, 0);
-  PVector pos = new PVector(width/2-pathWidth/2, 0);
+  PVector pos = new PVector(width/2, height/2);
   
   void update() {
     //velocity.add(sinMovement(), 0);
@@ -12,7 +12,11 @@ class Path {
   void display() {
     noStroke();
     fill(set4);
-    rect(pos.x, pos.y, pathWidth, height);
-    line(pos.x + pathWidth/2, player.pos.y, player.pos.x, player.pos.y);
+    circle(pos.x, pos.y, pathWidth);
+    fill(set4Faded);
+    circle(pos.x, pos.y, pathWidth + pathTolerance);
+    //rectMode(CORNER);
+    //rect(pos.x, pos.y, pathWidth, height);
+    line(pos.x, player.pos.y, player.pos.x, player.pos.y);
   }
 }

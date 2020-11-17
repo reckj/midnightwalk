@@ -16,6 +16,7 @@ color set3 = #020E26;
 color set4 = #0B3640;
 color set5 = #F2C744;
 color bgColor = set3;
+color set4Faded = 0x800B3640;
 
 float menuRectSizeX = 500;
 
