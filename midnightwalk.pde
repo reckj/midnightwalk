@@ -75,7 +75,7 @@ void setup() {
   
   score = new Score();
   
-  //titlewalker = new TitleWalker();
+  titlewalker = new TitleWalker();
 }
 
 

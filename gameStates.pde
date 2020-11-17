@@ -16,8 +16,8 @@ void runGameState() {
     player.display();
     player.checkCollisionWithObstacle(obstacle1);
     player.checkCollisionWithObstacle(obstacle2);
-    stroke(255);
-    line(width/2,0,width/2,height);
+    //stroke(255);
+    //line(width/2,0,width/2,height);
 }
 
 void runQuitState() {
@@ -40,8 +40,8 @@ void runMenuState(){
   score.resetScore();
   obstacle1.resetPosition();
   obstacle2.resetPosition();
-  //titlewalker.update();
-  //titlewalker.display();
+  titlewalker.update();
+  titlewalker.display();
 }
 
 void runPauseState() {

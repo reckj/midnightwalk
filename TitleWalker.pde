@@ -1,7 +1,6 @@
 class TitleWalker {
   PImage[] imageList = new PImage[17];
-  PVector velocity = new PVector(-2, 0);
-  PVector pos = new PVector(0, 0);
+  PVector pos = new PVector(13 * width / 20, -50);
   
   TitleWalker() {
     for (int i = 0; i < imageList.length; i++) {
@@ -12,20 +11,14 @@ class TitleWalker {
   }
 
   void update() {
-    pos.add(velocity);
-    if (pos.x > width)
-    {
-      resetPosition();
-    }
+    
   }
 
   void resetPosition() {
-    pos.set(-imageList[1].width, height/5);
+    //pos.set(0, height/5);
   }
 
   void display() {
-    noStroke();
-    fill(0);
     int index = frameCount/4 % (imageList.length-1);
     image(imageList[index], pos.x, pos.y, imageList[index].width, imageList[index].height);
   }
