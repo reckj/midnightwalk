@@ -1,3 +1,7 @@
+import processing.sound.*;
+
+SoundFile file;
+
 Player player;
 Obstacle obstacle1;
 Path path;
@@ -17,6 +21,8 @@ int maxStarfieldSize = 300;
 
 boolean pauseWasPressed = false;
 
+float playerAcceleration = 1.0;
+
 float pathTolerance = 50;
 float pathMovementScale = 1.5;
 float pathVelocity = 0.2;
@@ -27,6 +33,9 @@ float pathPhase = radians(90);
 void setup() {
   size(1500, 1000, FX2D);
   //fullScreen(FX2D, 2);
+  
+  file = new SoundFile(this, "soundtrack.wav");
+  file.loop();
 
   player = new Player();
   
@@ -105,10 +114,10 @@ void keyPressed() {
   if (activeState.equals("Game")) {
     if (key == CODED){
       if (keyCode == LEFT) {
-        player.velocity.add(-1,0);
+        player.velocity.add(-playerAcceleration,0);
       }
       if (keyCode == RIGHT) {
-        player.velocity.add(1,0);
+        player.velocity.add(playerAcceleration,0);
       }
     }
     if (key == 'p' || key == 'P'){
