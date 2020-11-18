@@ -1,8 +1,11 @@
 import processing.sound.*;
+import processing.svg.*;
 
 SoundFile file;
 
 PFont cyRegular;
+
+PShape lamp;
 
 Player player;
 Obstacle obstacle1;
@@ -22,6 +25,7 @@ color set2 = #7A77D9;
 color set3 = #020E26;
 color set4 = #0B3640;
 color set5 = #F2C744;
+color set6 = #553b6C;
 color bgColor = set3;
 color set4Faded = 0x330B3640;
 color set4Fadedless = 0xB30B3640;
@@ -56,6 +60,8 @@ void setup() {
 
   cyRegular = createFont("CyRegular.otf",32);
   textFont(cyRegular);
+  
+  lamp = loadShape("svgobjects/lamp.svg");
 
   player = new Player();
   
