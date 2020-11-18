@@ -71,7 +71,7 @@ void runGameState() {
     path.display();
     score.dislay();
     player.display();
-    scenelamp.display();
+    lampL.display();
 }
 
 void runQuitState() {

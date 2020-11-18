@@ -6,6 +6,8 @@ SoundFile file;
 PFont cyRegular;
 
 PShape lampsvg;
+PShape benchLsvg;
+PShape benchRsvg;
 
 Player player;
 Obstacle obstacle1;
@@ -17,7 +19,10 @@ Starfield starfield1;
 Starfield starfield2;
 Score score;
 TitleWalker titlewalker;
-Sceneryobject scenelamp;
+Sceneryobject lampL;
+Sceneryobject lampR;
+Sceneryobject benchL;
+Sceneryobject benchR;
 
 float time = 0;
 
@@ -63,7 +68,14 @@ void setup() {
   textFont(cyRegular);
   
   lampsvg = loadShape("svgobjects/lamp.svg");
-  scenelamp = new Sceneryobject();
+  benchLsvg = loadShape("svgobjects/benchL.svg");
+  benchRsvg = loadShape("svgobjects/benchR.svg");
+  lampL = new Sceneryobject();
+  lampR = new Sceneryobject();
+  benchL = new Sceneryobject();
+  benchR = new Sceneryobject();
+  
+  
 
   player = new Player();
   
