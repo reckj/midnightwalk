@@ -1,11 +1,13 @@
 class Sceneryobject {
-  String type = "lamp";
-  PVector pos = new PVector(width/3,0);
-  PVector velocity = new PVector(-0.5,2);
-  float objectsize = 100;
+  String type = "";
+  PVector pos = new PVector(0,0);
+  PVector velocity = new PVector(-0.2,3);
+  float objectsize_init = 200;
+  float objectsize = objectsize_init;
   
   void update() {
     pos.add(velocity);
+    //objectsize += pos.y / 1000;
     if (pos.y > height) {
       reset();
     }
@@ -14,10 +16,10 @@ class Sceneryobject {
 
   
   void display() {
-    if (type == "lamp") {
+    if (type == "lampL") {
       lampsvg.disableStyle();
       fill(set6);
-      shape(lampsvg,pos.x,pos.y, objectsize + time / 2, objectsize + time / 2);
+      shape(lampsvg,pos.x,pos.y, objectsize, objectsize);
     }
     else if (type == "bench") {
     
@@ -25,7 +27,14 @@ class Sceneryobject {
   }
   
   void reset () {
-    pos.y = 0;
-    pos.x = width/3;
+    objectsize = objectsize_init;
+    if (type == "lampL") {
+      pos.y = -lampsvg.height;
+      pos.x = 1 * width/10;
+    }
+    else if (type == "lampR"){
+      pos.y = -lampsvg.height;
+      pos.x = 9 * width / 10;
+    }
   }
 }

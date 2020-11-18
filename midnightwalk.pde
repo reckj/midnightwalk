@@ -42,6 +42,8 @@ float menuRectSizeX = 500;
 
 String activeState = "Menu";
 
+String activeLevel = "Level1";
+
 float playbackGain = 0.5;
 
 int maxStarfieldSize = 300;
@@ -74,6 +76,10 @@ void setup() {
   lampR = new Sceneryobject();
   benchL = new Sceneryobject();
   benchR = new Sceneryobject();
+  lampL.type = "lampL";
+  lampR.type = "lampR";
+  lampL.reset();
+  lampR.reset();
   
   
 

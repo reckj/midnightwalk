@@ -23,10 +23,10 @@ class Player {
   }
   
   void display() {
-    noFill();
-    stroke(255);
+    //noFill();
+    //stroke(255);
     rectMode(CORNER);
-    rect(pos.x - size/2, pos.y - size/2, size, size);
+    //rect(pos.x - size/2, pos.y - size/2, size, size);
     noStroke();
     fill(set2);
     circle(pos.x,pos.y,size);

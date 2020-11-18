@@ -7,6 +7,7 @@ void runGameState() {
     score.update();
     player.update();
     lampL.update();
+    lampR.update();
     
     starfield1.display();
     starfield2.display();
@@ -25,6 +26,8 @@ void runGameState() {
       obstacle1.display();
       
       obstacle1.update();
+      
+      activeLevel = "Level1";
     }
     else if (score.value >= 50 & score.value < 100){
       obstacle1.minVelocity = 1;
@@ -37,6 +40,8 @@ void runGameState() {
       
       obstacle1.display();
       obstacle2.display();
+      
+      activeLevel = "Level2";
     }
     else if (score.value >= 100 & score.value < 200){
       obstacle1.minVelocity = 1;
@@ -51,6 +56,8 @@ void runGameState() {
       obstacle1.display();
       obstacle2.display();
       obstacle3.display();
+      
+      activeLevel = "Level3";
     }
     else if(score.value >= 200){
       obstacle1.minVelocity = 1;
@@ -67,12 +74,15 @@ void runGameState() {
       obstacle2.display();
       obstacle3.display();
       obstacle4.display();
+      
+      activeLevel = "Level4";
     }
     
     path.display();
     score.dislay();
     player.display();
     lampL.display();
+    lampR.display();
 }
 
 void runQuitState() {
