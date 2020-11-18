@@ -66,7 +66,7 @@ float pathPhase = radians(90);
 
 void setup() {
   size(1500, 1000, FX2D);
-  //fullScreen(FX2D, 2);
+  fullScreen(FX2D, 2);
   
   file = new SoundFile(this, "soundtrack.wav");
   singlenote = new SoundFile[numNotes];
