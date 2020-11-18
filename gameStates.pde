@@ -24,7 +24,7 @@ void runGameState() {
     //4 different difficulties defined by the score
     if (score.value > 0 & score.value < 50){
       obstacle1.minVelocity = 2;
-      obstacle1.maxVelocity = 5;
+      obstacle1.maxVelocity = 6;
       
       obstacle1.display();
       
@@ -36,7 +36,7 @@ void runGameState() {
       obstacle1.minVelocity = 1;
       obstacle1.maxVelocity = 3;
       obstacle2.minVelocity = 2;
-      obstacle2.maxVelocity = 5;
+      obstacle2.maxVelocity = 6;
       
       obstacle1.update();
       obstacle2.update();
@@ -50,7 +50,7 @@ void runGameState() {
       obstacle1.minVelocity = 1;
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
-      obstacle2.maxVelocity = 5;
+      obstacle2.maxVelocity = 6;
       
       obstacle1.update();
       obstacle2.update();
@@ -66,7 +66,7 @@ void runGameState() {
       obstacle1.minVelocity = 1;
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
-      obstacle2.maxVelocity = 5;
+      obstacle2.maxVelocity = 6;
       
       obstacle1.update();
       obstacle2.update();

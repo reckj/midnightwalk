@@ -56,7 +56,7 @@ boolean pauseWasPressed = false;
 float playerAcceleration = 2.0;
 
 float pathTolerance = 150;
-float pathMovementScale = 1.5;
+float pathMovementScale = 1.3;
 float pathVelocity = 0.2;
 float pathPhase = radians(90);
 
