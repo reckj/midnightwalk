@@ -1,23 +1,74 @@
 void runGameState() {
     background(bgColor);
+    
     starfield1.update();
-    starfield1.display();
     starfield2.update();
-    starfield2.display();
-    path.display();
     path.update();
-    obstacle1.display();
-    obstacle1.update();
-    obstacle2.display();
-    obstacle2.update();
     score.update();
-    score.dislay();
     player.update();
-    player.display();
+    
+    starfield1.display();
+    starfield2.display();
+    
     player.checkCollisionWithObstacle(obstacle1);
     player.checkCollisionWithObstacle(obstacle2);
-    //stroke(255);
-    //line(width/2,0,width/2,height);
+
+    
+    //4 different difficulties defined by the score
+    if (score.value > 0 & score.value < 50){
+      obstacle1.minVelocity = 2;
+      obstacle1.maxVelocity = 5;
+      
+      obstacle1.display();
+      
+      obstacle1.update();
+    }
+    else if (score.value >= 50 & score.value < 100){
+      obstacle1.minVelocity = 1;
+      obstacle1.maxVelocity = 3;
+      obstacle2.minVelocity = 2;
+      obstacle2.maxVelocity = 5;
+      
+      obstacle1.update();
+      obstacle2.update();
+      
+      obstacle1.display();
+      obstacle2.display();
+    }
+    else if (score.value >= 100 & score.value < 200){
+      obstacle1.minVelocity = 1;
+      obstacle1.maxVelocity = 4;
+      obstacle2.minVelocity = 2;
+      obstacle2.maxVelocity = 5;
+      
+      obstacle1.update();
+      obstacle2.update();
+      obstacle3.update();
+      
+      obstacle1.display();
+      obstacle2.display();
+      obstacle3.display();
+    }
+    else if(score.value >= 200){
+      obstacle1.minVelocity = 1;
+      obstacle1.maxVelocity = 4;
+      obstacle2.minVelocity = 2;
+      obstacle2.maxVelocity = 5;
+      
+      obstacle1.update();
+      obstacle2.update();
+      obstacle3.update();
+      obstacle4.update();
+      
+      obstacle1.display();
+      obstacle2.display();
+      obstacle3.display();
+      obstacle4.display();
+    }
+    
+    path.display();
+    score.dislay();
+    player.display();
 }
 
 void runQuitState() {

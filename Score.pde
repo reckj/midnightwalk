@@ -1,7 +1,8 @@
 class Score {
   float value = 0;
   float losingFactor = 0.1;
-  float winningFactor = 0.05;
+  float winningFactor = 0.5;
+  float startScore = 10;
   
   void update(){
     if(value < 0){
@@ -18,7 +19,7 @@ class Score {
   }
   
   void resetScore(){
-    value = 0;
+    value = startScore;
   }
   
   void dislay(){

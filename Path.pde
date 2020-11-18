@@ -15,9 +15,9 @@ class Path {
   
   void display() {
     if (checkCircle(pos.x, pos.y, pathWidth/2, player.pos.x, player.pos.y, player.size/2)){
-      fill(set1);
+      fill(set5Faded);
       circle(pos.x, pos.y, pathWidth);
-      fill(set4Faded);
+      fill(set5Fadedless);
       circle(pos.x, pos.y, pathWidth + pathTolerance);
     }
     else {

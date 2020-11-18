@@ -7,6 +7,8 @@ PFont cyRegular;
 Player player;
 Obstacle obstacle1;
 Obstacle obstacle2;
+Obstacle obstacle3;
+Obstacle obstacle4;
 Path path;
 Starfield starfield1;
 Starfield starfield2;
@@ -23,6 +25,8 @@ color set5 = #F2C744;
 color bgColor = set3;
 color set4Faded = 0x330B3640;
 color set4Fadedless = 0xB30B3640;
+color set5Faded = 0x80F2C744;
+color set5Fadedless = 0x1AF2C744;
 
 float menuRectSizeX = 500;
 
@@ -59,6 +63,10 @@ void setup() {
   obstacle1.resetPosition();
   obstacle2 = new Obstacle();
   obstacle2.resetPosition();
+  obstacle3 = new Obstacle();
+  obstacle3.resetPosition();
+  obstacle4 = new Obstacle();
+  obstacle4.resetPosition();
   
   path = new Path();
   
