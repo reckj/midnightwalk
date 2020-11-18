@@ -183,7 +183,6 @@ void keyPressed() {
     if ((key == 'p' & pauseWasPressed == true)|| (key == 'P' & pauseWasPressed == true)){
       activeState = "Game";
       pauseWasPressed = false;
-      //file.play();
     }
   }
   if (activeState.equals("GameOver")) {
