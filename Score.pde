@@ -11,6 +11,10 @@ class Score {
     else{
       if(checkCircle(path.pos.x, path.pos.y, path.pathWidth/2, player.pos.x, player.pos.y, player.size/2)){
         value+= winningFactor;
+        
+        if (millis() - lastSecond >= 500) {
+          scoresound();
+        }
       }
       else if(checkCircle(path.pos.x, path.pos.y, (path.pathWidth + pathTolerance)/2, player.pos.x, player.pos.y, player.size/2) == false){
         value-= losingFactor;

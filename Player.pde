@@ -3,8 +3,8 @@ class Player {
   float size = 40;
 
   // physical attributes
-  final float speedLimit = 10;
-  float damping = 0.98;
+  final float speedLimit = 8;
+  float damping = 0.97;
   PVector acceleration = new PVector (0, 0);
   PVector velocity = new PVector(0, 0);
   PVector pos = new PVector(width / 2, 3 * height / 4);

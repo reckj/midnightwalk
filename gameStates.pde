@@ -90,6 +90,7 @@ void runGameState() {
     tile.display();
     score.dislay();
     //text(player.velocity.x, 100, 100);
+    text(second() - lastSecond,100,100);
     
 }
 

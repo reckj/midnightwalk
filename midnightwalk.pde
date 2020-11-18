@@ -50,6 +50,8 @@ String activeState = "Menu";
 String activeLevel = "Level1";
 
 float playbackGain = 0.2;
+float playbackGainSingleNotes = 0.08;
+float lastSecond = 0;
 
 int maxStarfieldSize = 300;
 
@@ -73,7 +75,6 @@ void setup() {
   for (int i = 0; i < numNotes; i++) {
     singlenote[i] = new SoundFile(this, "singlenotes/"+i+ ".wav");
   }
-  singlenote[1].loop();
 
   cyRegular = createFont("CyRegular.otf",32);
   textFont(cyRegular);
