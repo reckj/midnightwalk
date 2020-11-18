@@ -23,17 +23,17 @@ class Sceneryobject {
   void display() {
     if (type == "lampL" || type == "lampR") {
       lampsvg.disableStyle();
-      fill(set6);
+      fill(set2);
       shape(lampsvg,pos.x,pos.y, objectsize, objectsize);
     }
     else if (type == "benchL") {
       benchLsvg.disableStyle();
-      fill(set6);
+      fill(set2);
       shape(benchLsvg, pos.x, pos.y, objectsize, objectsize);
     }
     else if (type == "benchR") {
       benchRsvg.disableStyle();
-      fill(set6);
+      fill(set2);
       shape(benchRsvg, pos.x, pos.y, objectsize, objectsize);
     }
     else if (type == "tile") {

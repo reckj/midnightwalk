@@ -51,6 +51,8 @@ void runGameState() {
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
       obstacle2.maxVelocity = 6;
+      obstacle3.minVelocity = 3;
+      obstacle3.maxVelocity = 4;
       
       obstacle1.update();
       obstacle2.update();
@@ -67,6 +69,8 @@ void runGameState() {
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
       obstacle2.maxVelocity = 6;
+      obstacle3.minVelocity = 3;
+      obstacle3.maxVelocity = 4;
       
       obstacle1.update();
       obstacle2.update();
@@ -90,8 +94,6 @@ void runGameState() {
     tile.display();
     score.dislay();
     //text(player.velocity.x, 100, 100);
-    text(second() - lastSecond,100,100);
-    
 }
 
 void runQuitState() {
@@ -101,9 +103,9 @@ void runQuitState() {
 void runMenuState(){
   file.stop();
   background(set1);
+  titlepattern.update();
+  titlepattern.display();
   fill(set3);
-  rectMode(CENTER);
-  //rect(width/4,height/5,menuRectSizeX,menuRectSizeX);
   textAlign(CENTER, CENTER);
   textSize(120);
   text("Midnightwalk", width/2, height/5);
@@ -118,6 +120,7 @@ void runMenuState(){
   obstacle4.resetPosition();
   titlewalker.update();
   titlewalker.display();
+
 }
 
 void runPauseState() {
