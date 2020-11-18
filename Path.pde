@@ -28,7 +28,7 @@ class Path {
       circle(pos.x, pos.y, pathWidth + pathTolerance);
       //rectMode(CORNER);
       //rect(pos.x, pos.y, pathWidth, height);
-      line(pos.x, player.pos.y, player.pos.x, player.pos.y);
+      //line(pos.x, player.pos.y, player.pos.x, player.pos.y);
     }
   }
 }

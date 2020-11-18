@@ -9,6 +9,8 @@ PShape lampsvg;
 PShape benchLsvg;
 PShape benchRsvg;
 
+PImage tilepng;
+
 Player player;
 Obstacle obstacle1;
 Obstacle obstacle2;
@@ -23,6 +25,7 @@ Sceneryobject lampL;
 Sceneryobject lampR;
 Sceneryobject benchL;
 Sceneryobject benchR;
+Sceneryobject tile;
 
 float time = 0;
 
@@ -72,16 +75,22 @@ void setup() {
   lampsvg = loadShape("svgobjects/lamp.svg");
   benchLsvg = loadShape("svgobjects/benchL.svg");
   benchRsvg = loadShape("svgobjects/benchR.svg");
+  tilepng = loadImage("pngobjects/tile.png");
   lampL = new Sceneryobject();
   lampR = new Sceneryobject();
   benchL = new Sceneryobject();
   benchR = new Sceneryobject();
+  tile = new Sceneryobject();
   lampL.type = "lampL";
   lampR.type = "lampR";
+  benchL.type = "benchL";
+  benchR.type = "benchR";
+  tile.type = "tile";
   lampL.reset();
   lampR.reset();
-  
-  
+  benchL.reset();
+  benchR.reset();
+  tile.reset();
 
   player = new Player();
   

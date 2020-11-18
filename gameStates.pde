@@ -8,6 +8,9 @@ void runGameState() {
     player.update();
     lampL.update();
     lampR.update();
+    benchL.update();
+    benchR.update();
+    tile.update();
     
     starfield1.display();
     starfield2.display();
@@ -83,6 +86,10 @@ void runGameState() {
     player.display();
     lampL.display();
     lampR.display();
+    benchL.display();
+    benchR.display();
+    tile.display();
+    
 }
 
 void runQuitState() {
@@ -105,6 +112,8 @@ void runMenuState(){
   score.resetScore();
   obstacle1.resetPosition();
   obstacle2.resetPosition();
+  obstacle3.resetPosition();
+  obstacle4.resetPosition();
   titlewalker.update();
   titlewalker.display();
 }
