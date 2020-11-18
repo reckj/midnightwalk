@@ -51,6 +51,8 @@ void runGameState() {
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
       obstacle2.maxVelocity = 6;
+      obstacle3.minVelocity = 3;
+      obstacle3.maxVelocity = 4;
       
       obstacle1.update();
       obstacle2.update();
@@ -67,6 +69,8 @@ void runGameState() {
       obstacle1.maxVelocity = 4;
       obstacle2.minVelocity = 2;
       obstacle2.maxVelocity = 6;
+      obstacle3.minVelocity = 3;
+      obstacle3.maxVelocity = 4;
       
       obstacle1.update();
       obstacle2.update();
@@ -90,8 +94,6 @@ void runGameState() {
     tile.display();
     score.dislay();
     //text(player.velocity.x, 100, 100);
-    text(second() - lastSecond,100,100);
-    
 }
 
 void runQuitState() {

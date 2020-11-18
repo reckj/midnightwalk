@@ -1,7 +1,7 @@
 class Score {
   float value = 0;
   float losingFactor = 0.01;
-  float winningFactor = 0.2;
+  float winningFactor = 0.08;
   float startScore = 10;
   
   void update(){
