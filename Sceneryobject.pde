@@ -5,7 +5,7 @@ class Sceneryobject {
   float objectsize_init = 200;
   float objectsize = objectsize_init;
   float tileSize = 50;
-  float objectOffset = height / 2;
+  float objectOffset = height / 3;
   float driftSpeed = 2;
   float offsetSpeed = 0.0;
   int numTiles = int(height/tileSize);
@@ -39,6 +39,9 @@ class Sceneryobject {
     else if (type == "tile") {
       for (int i = 0; i <= numTiles; i++) {
         image(tilepng, pos.x, pos.y - i * tileSize, tileSize, tileSize);
+        image(tilepng, pos.x, pos.y + i * tileSize, tileSize, tileSize);
+        image(tilepng, pos.x + 3 * width / 5 - tileSize, pos.y - i * tileSize, tileSize, tileSize);
+        image(tilepng, pos.x + 3 * width / 5 - tileSize, pos.y + i * tileSize, tileSize, tileSize);
       }
     }
   }
@@ -46,23 +49,23 @@ class Sceneryobject {
   void reset () {
     objectsize = objectsize_init;
     if (type == "lampL") {
-      pos.y = -lampsvg.height;
-      pos.x = 1 * width/10;
+      pos.y = -objectsize;
+      pos.x = 1 * width/20;
       velocity.set(-offsetSpeed,driftSpeed);
     }
     else if (type == "lampR") {
-      pos.y = -lampsvg.height;
-      pos.x = 9 * width / 10 - objectsize;
+      pos.y = -objectsize;
+      pos.x = 19 * width / 20 - objectsize;
       velocity.set(offsetSpeed,driftSpeed);
     }
     else if (type == "benchL") {
-      pos.y = -lampsvg.height - objectOffset;
-      pos.x = 1 * width / 10;
+      pos.y = -objectsize - objectOffset;
+      pos.x = 1 * width / 20;
       velocity.set(-offsetSpeed,driftSpeed);
     }
     else if (type == "benchR") {
-      pos.y = -lampsvg.height - objectOffset;
-      pos.x = 9 * width / 10 - objectsize;
+      pos.y = -objectsize - objectOffset;
+      pos.x = 19 * width / 20 - objectsize;
       velocity.set(offsetSpeed,driftSpeed);
     }
     else if (type == "tile") {
