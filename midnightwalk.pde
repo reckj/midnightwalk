@@ -50,7 +50,7 @@ String activeState = "Menu";
 String activeLevel = "Level1";
 
 float playbackGain = 0.2;
-float playbackGainSingleNotes = 0.08;
+float playbackGainSingleNotes = 0.05;
 float lastSecond = 0;
 
 int maxStarfieldSize = 300;
