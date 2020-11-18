@@ -33,7 +33,7 @@ class Starfield {
   
   void generatePattern(){
     for (int i=0; i < fieldsize; i++){
-      posX[i] = random(-width, width);
+      posX[i] = random(0, width);
       posY[i] = random(-height, height);
       size[i] = random(starSizeToleranceBottom, starSizeToleranceTop);
     }    

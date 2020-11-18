@@ -1,8 +1,17 @@
 import processing.sound.*;
+import processing.svg.*;
 
 SoundFile file;
+SoundFile[] singlenote;
+int numNotes = 10;
 
 PFont cyRegular;
+
+PShape lampsvg;
+PShape benchLsvg;
+PShape benchRsvg;
+
+PImage tilepng;
 
 Player player;
 Obstacle obstacle1;
@@ -14,6 +23,11 @@ Starfield starfield1;
 Starfield starfield2;
 Score score;
 TitleWalker titlewalker;
+Sceneryobject lampL;
+Sceneryobject lampR;
+Sceneryobject benchL;
+Sceneryobject benchR;
+Sceneryobject tile;
 
 float time = 0;
 
@@ -22,6 +36,7 @@ color set2 = #7A77D9;
 color set3 = #020E26;
 color set4 = #0B3640;
 color set5 = #F2C744;
+color set6 = #553b6C;
 color bgColor = set3;
 color set4Faded = 0x330B3640;
 color set4Fadedless = 0xB30B3640;
@@ -32,16 +47,18 @@ float menuRectSizeX = 500;
 
 String activeState = "Menu";
 
-float playbackGain = 0.5;
+String activeLevel = "Level1";
+
+float playbackGain = 0.2;
 
 int maxStarfieldSize = 300;
 
 boolean pauseWasPressed = false;
 
-float playerAcceleration = 2.0;
+float playerAcceleration = 0.5;
 
 float pathTolerance = 150;
-float pathMovementScale = 1.5;
+float pathMovementScale = 1.3;
 float pathVelocity = 0.2;
 float pathPhase = radians(90);
 
@@ -52,10 +69,34 @@ void setup() {
   //fullScreen(FX2D, 2);
   
   file = new SoundFile(this, "soundtrack.wav");
-  //file.loop();
+  singlenote = new SoundFile[numNotes];
+  for (int i = 0; i < numNotes; i++) {
+    singlenote[i] = new SoundFile(this, "/singlenotes"+i+ ".wav");
+  }
+  singlenote[1].loop();
 
   cyRegular = createFont("CyRegular.otf",32);
   textFont(cyRegular);
+  
+  lampsvg = loadShape("svgobjects/lamp.svg");
+  benchLsvg = loadShape("svgobjects/benchL.svg");
+  benchRsvg = loadShape("svgobjects/benchR.svg");
+  tilepng = loadImage("pngobjects/tile.png");
+  lampL = new Sceneryobject();
+  lampR = new Sceneryobject();
+  benchL = new Sceneryobject();
+  benchR = new Sceneryobject();
+  tile = new Sceneryobject();
+  lampL.type = "lampL";
+  lampR.type = "lampR";
+  benchL.type = "benchL";
+  benchR.type = "benchR";
+  tile.type = "tile";
+  lampL.reset();
+  lampR.reset();
+  benchL.reset();
+  benchR.reset();
+  tile.reset();
 
   player = new Player();
   
@@ -113,14 +154,14 @@ void keyPressed() {
   // game inputs
   if (activeState.equals("Game")) {
     if (key == CODED){
-      if (player.velocity.mag() <= player.speedLimit){
+      //if (player.velocity.mag() <= player.speedLimit){
         if (keyCode == LEFT) {
-          player.velocity.add(-playerAcceleration,0);
+          player.acceleration.add(-playerAcceleration,0);
         }
         if (keyCode == RIGHT) {
-          player.velocity.add(playerAcceleration,0);
+          player.acceleration.add(playerAcceleration,0);
         }
-      }
+      //}
     }
     if (key == 'p' || key == 'P'){
       activeState = "Pause";
@@ -161,7 +202,8 @@ void keyReleased() {
   if (activeState.equals("Game")){
     if (key == CODED){
         if (keyCode == LEFT || keyCode == RIGHT) {
-          player.velocity.set(0,0);
+          //player.velocity.set(0,0);
+          player.acceleration.set(0,0);
         }
       }
     }
