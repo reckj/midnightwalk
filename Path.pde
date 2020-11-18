@@ -1,11 +1,11 @@
 class Path {
   float pathWidth = 50;
   
-  PVector pos = new PVector(width/2, height/2);
+  PVector pos = new PVector(width / 2, 3 * height / 4);
   
   void resetPath(){
     pos.x = width/2;
-    pos.y = height/2;
+    pos.y = 3 * height / 4;
     time = 0;
   }
   

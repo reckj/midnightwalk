@@ -6,6 +6,7 @@ void runGameState() {
     path.update();
     score.update();
     player.update();
+    lampL.update();
     
     starfield1.display();
     starfield2.display();

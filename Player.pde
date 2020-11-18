@@ -5,11 +5,11 @@ class Player {
   // physical attributes
   final float speedLimit = 10;
   PVector velocity = new PVector(0, 0);
-  PVector pos = new PVector(width / 2, height / 2);
+  PVector pos = new PVector(width / 2, 3 * height / 4);
 
   void resetPlayer() {
     velocity = new PVector(0, 0);
-    pos = new PVector(width / 2, height / 2);
+    pos = new PVector(width / 2, 3 * height / 4);
   }
 
   void update() {
