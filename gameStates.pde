@@ -103,9 +103,9 @@ void runQuitState() {
 void runMenuState(){
   file.stop();
   background(set1);
+  titlepattern.update();
+  titlepattern.display();
   fill(set3);
-  rectMode(CENTER);
-  //rect(width/4,height/5,menuRectSizeX,menuRectSizeX);
   textAlign(CENTER, CENTER);
   textSize(120);
   text("Midnightwalk", width/2, height/5);
@@ -120,6 +120,7 @@ void runMenuState(){
   obstacle4.resetPosition();
   titlewalker.update();
   titlewalker.display();
+
 }
 
 void runPauseState() {

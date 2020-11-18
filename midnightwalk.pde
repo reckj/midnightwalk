@@ -28,8 +28,10 @@ Sceneryobject lampR;
 Sceneryobject benchL;
 Sceneryobject benchR;
 Sceneryobject tile;
+Titlepattern titlepattern;
 
 float time = 0;
+float animationTime = 0;
 
 color set1 = #F2505D;
 color set2 = #7A77D9;
@@ -49,8 +51,8 @@ String activeState = "Menu";
 
 String activeLevel = "Level1";
 
-float playbackGain = 0.2;
-float playbackGainSingleNotes = 0.05;
+float playbackGain = 0.25;
+float playbackGainSingleNotes = 0.03;
 float lastSecond = 0;
 
 int maxStarfieldSize = 300;
@@ -115,7 +117,7 @@ void setup() {
   starfield1 = new Starfield();
   starfield1.fieldsize = 150;
   starfield1.generatePattern();
-  starfield1.velocity = 0.2;
+  starfield1.velocity = 0.3;
   starfield2 = new Starfield();
   starfield2.fieldsize = 60;
   starfield2.starSizeToleranceTop = 10;
@@ -126,6 +128,8 @@ void setup() {
   score = new Score();
   
   titlewalker = new TitleWalker();
+  
+  titlepattern = new Titlepattern();
 }
 
 

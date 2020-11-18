@@ -1,6 +1,6 @@
 class Score {
   float value = 0;
-  float losingFactor = 0.01;
+  float losingFactor = 0.02;
   float winningFactor = 0.08;
   float startScore = 10;
   
