@@ -12,6 +12,8 @@ void runGameState() {
     
     player.checkCollisionWithObstacle(obstacle1);
     player.checkCollisionWithObstacle(obstacle2);
+    player.checkCollisionWithObstacle(obstacle3);
+    player.checkCollisionWithObstacle(obstacle4);
 
     
     //4 different difficulties defined by the score
