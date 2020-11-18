@@ -27,10 +27,10 @@ class Obstacle {
   }
 
   void resetPosition() {
-    pos.set(random(2 * width/10, 8 * width/10), -250);
+    pos.set(random(7 * width/20, 13 * width/20), -250);
     velocity.set(0, random(minVelocity, maxVelocity));
     obstacleHeight = random(50, 250);
-    obstacleWidth = random(100, 350);
+    obstacleWidth = random(100, 300);
   }
 
   void display() {
