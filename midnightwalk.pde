@@ -71,7 +71,7 @@ void setup() {
   file = new SoundFile(this, "soundtrack.wav");
   singlenote = new SoundFile[numNotes];
   for (int i = 0; i < numNotes; i++) {
-    singlenote[i] = new SoundFile(this, "/singlenotes"+i+ ".wav");
+    singlenote[i] = new SoundFile(this, "singlenotes/"+i+ ".wav");
   }
   singlenote[1].loop();
 
