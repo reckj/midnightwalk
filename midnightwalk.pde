@@ -47,13 +47,13 @@ String activeState = "Menu";
 
 String activeLevel = "Level1";
 
-float playbackGain = 0.5;
+float playbackGain = 0.2;
 
 int maxStarfieldSize = 300;
 
 boolean pauseWasPressed = false;
 
-float playerAcceleration = 2.0;
+float playerAcceleration = 0.5;
 
 float pathTolerance = 150;
 float pathMovementScale = 1.3;
@@ -148,14 +148,14 @@ void keyPressed() {
   // game inputs
   if (activeState.equals("Game")) {
     if (key == CODED){
-      if (player.velocity.mag() <= player.speedLimit){
+      //if (player.velocity.mag() <= player.speedLimit){
         if (keyCode == LEFT) {
-          player.velocity.add(-playerAcceleration,0);
+          player.acceleration.add(-playerAcceleration,0);
         }
         if (keyCode == RIGHT) {
-          player.velocity.add(playerAcceleration,0);
+          player.acceleration.add(playerAcceleration,0);
         }
-      }
+      //}
     }
     if (key == 'p' || key == 'P'){
       activeState = "Pause";
@@ -196,7 +196,8 @@ void keyReleased() {
   if (activeState.equals("Game")){
     if (key == CODED){
         if (keyCode == LEFT || keyCode == RIGHT) {
-          player.velocity.set(0,0);
+          //player.velocity.set(0,0);
+          player.acceleration.set(0,0);
         }
       }
     }

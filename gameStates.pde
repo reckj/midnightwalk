@@ -82,13 +82,14 @@ void runGameState() {
     }
     
     path.display();
-    score.dislay();
     player.display();
     lampL.display();
     lampR.display();
     benchL.display();
     benchR.display();
     tile.display();
+    score.dislay();
+    //text(player.velocity.x, 100, 100);
     
 }
 
