@@ -5,7 +5,7 @@ SoundFile file;
 
 PFont cyRegular;
 
-PShape lamp;
+PShape lampsvg;
 
 Player player;
 Obstacle obstacle1;
@@ -17,6 +17,7 @@ Starfield starfield1;
 Starfield starfield2;
 Score score;
 TitleWalker titlewalker;
+Sceneryobject scenelamp;
 
 float time = 0;
 
@@ -61,7 +62,8 @@ void setup() {
   cyRegular = createFont("CyRegular.otf",32);
   textFont(cyRegular);
   
-  lamp = loadShape("svgobjects/lamp.svg");
+  lampsvg = loadShape("svgobjects/lamp.svg");
+  scenelamp = new Sceneryobject();
 
   player = new Player();
   

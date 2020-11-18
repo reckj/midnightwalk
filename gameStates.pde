@@ -71,9 +71,7 @@ void runGameState() {
     path.display();
     score.dislay();
     player.display();
-    lamp.disableStyle();
-    fill(set6);
-    shape(lamp,500,500);
+    scenelamp.display();
 }
 
 void runQuitState() {
