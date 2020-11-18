@@ -2,6 +2,8 @@ import processing.sound.*;
 import processing.svg.*;
 
 SoundFile file;
+SoundFile[] singlenote;
+int numNotes = 10;
 
 PFont cyRegular;
 
@@ -67,7 +69,11 @@ void setup() {
   //fullScreen(FX2D, 2);
   
   file = new SoundFile(this, "soundtrack.wav");
-  //file.loop();
+  singlenote = new SoundFile[numNotes];
+  for (int i = 0; i < numNotes; i++) {
+    singlenote[i] = new SoundFile(this, "/singlenotes"+i+ ".wav");
+  }
+  singlenote[1].loop();
 
   cyRegular = createFont("CyRegular.otf",32);
   textFont(cyRegular);
